@@ -1,0 +1,185 @@
+*
+    padding: 0
+    margin: 0
+    text-decoration: none
+    list-style: none
+    box-sizing: border-box
+    outline: none
+    font-family: 'Open Sans', sans-serif
+    font-size: 16px
+
+$primary: #11ad94
+$secondary: #04e6c1
+$white: #fff
+
+.container
+    max-width: 920px
+    margin: 0 auto
+
+header
+    padding-top: 120px
+    @media screen and ( max-width: 920px )
+        padding: 0
+
+main
+    position: relative
+
+.header-bg
+    position: absolute
+    width: 100%
+    height: 200px
+    z-index: -1
+    background: url(/images/header-bg.jpg)
+    background-repeat: no-repeat
+    background-attachment: fixed
+    background-position: top
+    background-size: cover
+    @media screen and ( max-width: 920px )
+        display: none
+
+.user
+    background: $white
+    border-radius: 5px
+    padding: 30px
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    @media screen and ( max-width: 340px )
+        padding: 30px 10px
+    &__img-wrapper
+    &__img
+        width: 100px
+        height: 100px
+        border-radius: 100px
+    &__info
+        flex-basis: 50%
+        margin-left: 30px
+    &__username
+        font-weight: 800
+        font-size: 20px
+    &__fullname
+        padding-top: 5px
+        .name
+            font-size: 18px
+        .surname
+            font-size: 18px
+    &__location
+        display: flex
+        margin-top: 20px
+        .location__img
+            width: 20px
+            height: 20px
+        .location__city
+            font-size: 14px
+            margin-left: 5px
+    &__settings
+        margin-right: 100px
+        @media screen and ( max-width: 720px )
+            margin-right: 0
+            align-items: center
+            // text-align: left
+
+        &_icon
+            width: 25px
+            height: 25px
+            cursor: pointer
+
+.buttons
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    padding: 0 30px
+    padding-left: 22.5%
+    @media screen and ( max-width: 720px )
+        justify-content: center
+        padding: 0
+    .follow
+        cursor: pointer
+        text-transform: uppercase
+        font-size: 15px
+        color: $white
+        text-align: center
+        border-radius: 50px
+        width: 100px
+        padding: 5px
+        background: linear-gradient(90deg,$primary 0%, $secondary 100%)
+    .price
+        margin-left: 20px
+        color: gray
+        border: 1px solid gray
+        padding: 3px 5px
+        border-radius: 5px
+
+.tabs
+    position: relative
+    &__items
+        margin-top: 50px
+        display: flex
+        .active
+            color: $primary
+            border-bottom: 2px solid $primary
+    &__item
+        color: #000
+        flex: 0 1 33.333%
+        text-align: center
+        text-transform: uppercase
+        font-size: 14px
+        font-weight: 600
+        border-bottom: 1px solid lightgray
+        cursor: pointer
+    &__line
+        position: absolute
+        top: 20px
+        width: 100%
+        border: 1px solid lightgray
+        z-index: -1
+    &__body // содержит все блоки табов
+    &__block // блок таба
+        display: none
+        padding: 20px
+        &:nth-child(1)
+            display: block
+
+.grid
+    display: grid
+    grid-template-columns: repeat(6, 1fr)
+    grid-template-rows: 400px 300px 200px
+    grid-template-areas: "big big big big big big" "md1 md1 md1 md2 md2 md2" "sm1 sm1 sm2 sm2 sm3 sm3"
+    grid-gap: 20px
+    &__element
+        background-image: url(/images/posts-bg.png)
+        &:nth-child(1)
+            grid-area: big
+        &:nth-child(2)
+            grid-area: md1
+        &:nth-child(3)
+            grid-area: md2
+        &:nth-child(4)
+            grid-area: sm1
+        &:nth-child(5)
+            grid-area: sm2
+        &:nth-child(6)
+            grid-area: sm3
+        .lock
+            height: 100%
+            display: flex
+            align-items: center
+            justify-content: center
+            .img-border
+                padding: 20px
+                border: 2px solid gray
+                border-radius: 200px
+                .img
+                    width: 30px
+                    height: 30px
+    @media screen and ( max-width: 600px )
+        grid-template-columns: 1fr
+        grid-template-areas: "big " "md1" "md2" "sm1" "sm2" "sm3"
+        grid-template-rows: repeat(6, 250px)
+    @media screen and ( max-width: 400px )
+        grid-template-rows: repeat(6, 200px)
+
+    .element__img
+        object-fit: fill
+        width: 100%
+        height: 100%
