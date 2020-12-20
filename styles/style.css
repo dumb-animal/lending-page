@@ -144,10 +144,14 @@ main {
 .tabs__items {
   margin-top: 50px;
   display: flex;
+  user-select: none;
 }
 .tabs__items .active {
   color: #11ad94;
   border-bottom: 2px solid #11ad94;
+}
+.tabs__items .disabled {
+  color: lightgray;
 }
 .tabs__item {
   color: #000;

@@ -115,9 +115,12 @@ main
     &__items
         margin-top: 50px
         display: flex
+        user-select: none
         .active
             color: $primary
             border-bottom: 2px solid $primary
+        .disabled
+            color: lightgray
     &__item
         color: #000
         flex: 0 1 33.333%
